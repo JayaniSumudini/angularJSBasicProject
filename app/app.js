@@ -1,25 +1,23 @@
 /**
- * Created by JSumudini on 11/9/2017.
+ * Created by JSumudini on 11/10/2017.
  */
-var app = angular.module('app',['ngRoute']);
-app.controller('MainCtrl',function($scope){
-
-});
-app.config(['$routeProvider',function($routeProvider){
-        $routeProvider.
-        when('/', {
-            templateUrl:'/components/Home/homeView.html',
-            controller:'HomeCtrl'
-        }).
-        when('/home', {
-            templateUrl:'/components/Home/homeView.html',
-            controller:'HomeCtrl'
-        }).
-        when('/registration', {
-            templateUrl:'/components/Registration/registrationView.html',
-            controller:'registrationCtrl'
-        }).
-        otherwise( {
-            redirectTo : '/home'
-        });
-    }]);
+angular.module('PatientRegistration',['ngRoute'])
+    .config(['$locationProvider','$routeProvider',function($locationProvider,$routeProvider){
+    $locationProvider.hashPrefix('!');
+    $routeProvider.
+    when('/', {
+        templateUrl:'/components/home-page/homeView.html',
+        controller:'HomeCtrl'
+    }).
+    when('/home', {
+        templateUrl:'/components/home-page/homeView.html',
+        controller:'HomeCtrl'
+    }).
+    when('/registration', {
+        templateUrl:'/components/registration-page/registrationView.html',
+        controller:'RegistrationCtrl'
+    }).
+    otherwise( {
+        redirectTo : '/home'
+    });
+}]);
