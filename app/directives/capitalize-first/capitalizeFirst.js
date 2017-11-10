@@ -1,6 +1,7 @@
 /**
  * Created by JSumudini on 11/10/2017.
  */
+"use strict"
 angular.module('capitalizeFirst',[])
     .directive('capitalizeFirst' , function ($parse) {
         return {
@@ -17,7 +18,7 @@ angular.module('capitalizeFirst',[])
                     return capitalized;
                 };
                 modelCtrl.$parsers.push(capitalize);
-                capitalize($parse(attrs.ngModel)(scope)); // capitalize initial value
+                capitalize($parse(attrs.ngModel)(scope));
             }
         };
     });

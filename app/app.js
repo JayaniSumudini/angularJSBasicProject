@@ -1,9 +1,8 @@
 /**
  * Created by JSumudini on 11/10/2017.
  */
-angular.module('PatientRegistration',['ngRoute'
-                ,'capitalizeFirst'
-                ,'limitNumberOfInputDigits'])
+'use strict'
+angular.module('PatientRegistration',['ngRoute','capitalizeFirst','limitNumberOfInputDigits'])
     .config(['$locationProvider','$routeProvider',function($locationProvider,$routeProvider){
     $locationProvider.hashPrefix('!');
     $routeProvider.
