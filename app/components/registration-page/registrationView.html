@@ -24,7 +24,7 @@
         </tr>
         <tr>
             <th align="left">Phone Number</th>
-            <th align="left" colspan="4"><input style="width:100%;border: 2px solid black;" type="text" id="pnumber" name="pnumber" data-ng-model='newData.pnumber' onkeypress='return event.charCode >= 48 && event.charCode <= 57' limit-to="10"/>
+            <th align="left" colspan="4"><input style="width:100%;border: 2px solid black;" type="text" id="pnumber" name="pnumber" data-ng-model='newData.pnumber' onkeypress='return event.charCode >= 48 && event.charCode <= 57' limit-number-of-input-digits="10"/>
                 <div style="font-weight: bolder;color: red;" data-ng-show="newData.pnumber.length == 10">Invalid phone number</div>
         </tr>
         <tr>

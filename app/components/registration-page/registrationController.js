@@ -1,7 +1,7 @@
 /**
  * Created by JSumudini on 11/10/2017.
  */
-angular.module('PatientRegistration').controller('RegistrationCtrl', ['$scope', '$http', function($scope, $http){
+var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['$scope', '$http', function($scope, $http){
     $scope.items = [{name:"test1", age:23, address:"add 01", status: "Full Time", gender: "male", bdayYear: 1991},
         {name:"test2", age:23, address:"add 01", status: "Full Time", gender: "male", bdayYear: 1991},
         {name:"test3", age:24, address:"add 01", status: "Full Time", gender: "female", bdayYear: 1992},
@@ -28,7 +28,6 @@ angular.module('PatientRegistration').controller('RegistrationCtrl', ['$scope', 
     $scope.clearFunction = function() {
 
     };
-
     $scope.submit = function() {
         var birthday = $scope.newData.bday;
         $scope.newData.age = $scope.agecal(birthday);
@@ -48,7 +47,6 @@ angular.module('PatientRegistration').controller('RegistrationCtrl', ['$scope', 
         //
         // }
         // return ageprint;
-
         var mdate = $("#bday").val().toString();
         var yearThen = parseInt(mdate.substring(0,4), 10);
         var monthThen = parseInt(mdate.substring(5,7), 10);
@@ -102,3 +100,23 @@ angular.module('PatientRegistration').controller('RegistrationCtrl', ['$scope', 
         }
     }
 }]);
+
+// app.directive('capitalizeFirstWord', function($parse) {
+//     return {
+//         require: 'ngModel',
+//         link: function(scope, element, attrs, modelCtrl) {
+//             var capitalize = function(inputValue) {
+//                 if (inputValue === undefined) { inputValue = ''; }
+//                 var reg = /([^\W_]+[^\s-]*) */g ;
+//                 var capitalized = inputValue.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+//                 if(capitalized !== inputValue) {
+//                     modelCtrl.$setViewValue(capitalized);
+//                     modelCtrl.$render();
+//                 }
+//                 return capitalized;
+//             };
+//             modelCtrl.$parsers.push(capitalize);
+//             capitalize($parse(attrs.ngModel)(scope)); // capitalize initial value
+//         }
+//     };
+// });
