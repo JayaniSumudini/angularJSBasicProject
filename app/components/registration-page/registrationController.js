@@ -3,14 +3,8 @@
  * Created by JSumudini on 11/10/2017.
  */
 
-var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['$scope', '$http', function($scope, $http){
-    $scope.items = [{name:"test1", age:23, address:"add 01", status: "Full Time", gender: "male", bdayYear: 1991},
-        {name:"test2", age:23, address:"add 01", status: "Full Time", gender: "male", bdayYear: 1991},
-        {name:"test3", age:24, address:"add 01", status: "Part Time", gender: "female", bdayYear: 1992},
-        {name:"test4", age:3, address:"add 02", status: "Full Time", gender: "male", bdayYear: 1991},
-        {name:"test1", age:23, address:"add 02", status: "Full Time", gender: "male", bdayYear: 1992},
-        {name:"test5", age:3, address:"add 01", status: "Student", gender: "female", bdayYear: 1991},
-        {name:"test1", age:24, address:"add 03", status: "Full Time", gender: "male", bdayYear: 1992}];
+var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['$scope', '$http','PatientDetails',function($scope, $http,PatientDetails){
+    $scope.items = PatientDetails.getAllPatientsDetails();
     $scope.searchItems = $scope.items;
     $scope.newDataLength=true;
     $scope.bdayinvalid=false;
@@ -39,17 +33,16 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
                 return status.value;
             }
         });
-    }
+    };
 
     $scope.submit = function() {
         $scope.bdayinvalid=false;
         var birthday = $scope.newData.bday;
         $scope.newData.age = $scope.agecal(birthday);
-        $scope.items.push($scope.newData);
+        PatientDetails.addNewPatientDetails($scope.newData);
         $scope.search($scope.searchText);
 
         $scope.newData=[];
-        $scope.statusgroup=["Full Time","parttime","retired","student","unemployed"];
         $scope.newDataLength=true;
     };
     $scope.agecal =function(birthday){
