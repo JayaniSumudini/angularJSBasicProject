@@ -1,3 +1,12 @@
+<style>
+	.rowcolour {
+		background-color: red;
+	}
+
+	.notrowcolour {
+		background-color: white;
+	}
+</style>
 <table class="table-hover" style="width:95%;border: 2px solid black;margin-top: 20px" align="center" >
 	<thead style="background: #8c8c8c;">
 	<tr>
@@ -5,7 +14,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr data-ng-repeat="item in $ctrl.data" ng-click="$ctrl.details(item)">
+	<tr data-ng-repeat="item in $ctrl.data" ng-click="$ctrl.fillDetails(item)" style="cursor: pointer;" data-ng-class="{rowcolour: item.rowcolour , notrowcolour: !item.rowcolour}">
 		<!--data-ng-right-click="openMenu(item)" data-ng-click="fillDetails(item)" style="cursor: pointer;"-->
 	<!--data-ng-class="{rowcolour: item.rowcolour , notrowcolour: !item.rowcolour} "-->
 	<th>{{item.name}}</th>

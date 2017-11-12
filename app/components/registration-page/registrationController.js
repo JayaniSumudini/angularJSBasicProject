@@ -76,10 +76,6 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     $scope.openMenu = function(item) {
         $scope.selected = item;
     };
-    $scope.fillDetails= function(item) {
-        console.log(item);
-        $scope.newData = item;
-    };
     $scope.remove = function () {
     };
     $scope.back=function () {
