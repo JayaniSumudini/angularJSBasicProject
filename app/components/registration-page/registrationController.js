@@ -11,13 +11,6 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     $scope.errorMessage=false;
 	$scope.searchColumns = ["Name","Age","Address","Status"];
     $scope.menulist = ['Delete', 'Edit', 'Add'];
-    $scope.statuses = [
-        {value: 1, text: "Full Time"},
-        {value: 2, text: "Part Time"},
-        {value: 3, text: "Retired"},
-        {value: 4, text: "Student"},
-        {value: 5, text: "Unemployed"}
-    ];
     $scope.searchText = {name: "",
         bday: null,
         gender: ""
@@ -26,7 +19,6 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     $scope.clearFunction = function() {
 
     };
-
     $scope.getStatusKey = function (item) {
         return $scope.statuses.filter( function(status){
             if(status.text ===item.status){

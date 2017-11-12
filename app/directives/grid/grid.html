@@ -15,13 +15,11 @@
 	</thead>
 	<tbody>
 	<tr data-ng-repeat="item in $ctrl.data" ng-click="$ctrl.fillDetails(item)" style="cursor: pointer;" data-ng-class="{rowcolour: item.rowcolour , notrowcolour: !item.rowcolour}">
-		<!--data-ng-right-click="openMenu(item)" data-ng-click="fillDetails(item)" style="cursor: pointer;"-->
-	<!--data-ng-class="{rowcolour: item.rowcolour , notrowcolour: !item.rowcolour} "-->
 	<th>{{item.name}}</th>
 	<th>{{item.age}}</th>
 	<th>{{item.address}}</th>
 	<th>
-	<select data-ng-model="item.status" data-ng-options="status.value as status.text for status in statuses" >
+	<select data-ng-model="item.status" data-ng-options="option.value as option.text for option in $ctrl.options" >
 	</select>
 	</th>
 	</tr>
