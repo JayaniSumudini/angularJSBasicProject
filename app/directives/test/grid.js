@@ -1,6 +1,6 @@
 'use strict';
 angular.module('heroDetail', []).component('heroDetail', {
-	templateUrl: 'directives/test/test.html',
+	templateUrl: 'directives/test/grid.html',
 	bindings: {
 		hero: '='
 	}
