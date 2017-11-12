@@ -9,6 +9,10 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     $scope.newDataLength=true;
     $scope.bdayinvalid=false;
     $scope.errorMessage=false;
+	$scope.hero = {
+		name: 'Spawn'
+	};
+
     $scope.menulist = ['Delete', 'Edit', 'Add'];
     $scope.statuses = [
         {value: 1, text: "Full Time"},
