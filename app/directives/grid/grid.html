@@ -19,7 +19,7 @@
 	<th>{{item.age}}</th>
 	<th>{{item.address}}</th>
 	<th>
-	<select data-ng-model="item.status" data-ng-options="option.value as option.text for option in $ctrl.options" >
+	<select data-ng-model="$ctrl.getSelectedOption(item.status)" data-ng-options="option.value as option.text for option in $ctrl.options" >
 	</select>
 	</th>
 	</tr>

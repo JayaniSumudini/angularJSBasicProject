@@ -20,5 +20,9 @@ angular.module('searchGrid', []).component('searchGrid', {
             {value: 4, text: "Student"},
             {value: 5, text: "Unemployed"}
         ];
+        this.getSelectedOption = function (text) {
+	        var option = this.options.filter(function (t) { return t.text === text });
+	        return option[0].value;
+        }
     }
 });
