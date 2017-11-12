@@ -1,0 +1,20 @@
+<table class="table-hover" style="width:95%;border: 2px solid black;margin-top: 20px" align="center" >
+	<thead style="background: #8c8c8c;">
+	<tr>
+		<th ng-repeat="column in $ctrl.columns"> {{column}}</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr data-ng-repeat="item in $ctrl.data" ng-click="$ctrl.details(item)">
+		<!--data-ng-right-click="openMenu(item)" data-ng-click="fillDetails(item)" style="cursor: pointer;"-->
+	<!--data-ng-class="{rowcolour: item.rowcolour , notrowcolour: !item.rowcolour} "-->
+	<th>{{item.name}}</th>
+	<th>{{item.age}}</th>
+	<th>{{item.address}}</th>
+	<th>
+	<select data-ng-model="item.status" data-ng-options="status.value as status.text for status in statuses" >
+	</select>
+	</th>
+	</tr>
+	</tbody>
+</table>

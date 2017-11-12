@@ -9,10 +9,7 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     $scope.newDataLength=true;
     $scope.bdayinvalid=false;
     $scope.errorMessage=false;
-	$scope.hero = {
-		name: 'Spawn'
-	};
-
+	$scope.searchColumns = ["Name","Age","Address","Status"];
     $scope.menulist = ['Delete', 'Edit', 'Add'];
     $scope.statuses = [
         {value: 1, text: "Full Time"},
@@ -80,6 +77,7 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
         $scope.selected = item;
     };
     $scope.fillDetails= function(item) {
+        console.log(item);
         $scope.newData = item;
     };
     $scope.remove = function () {
