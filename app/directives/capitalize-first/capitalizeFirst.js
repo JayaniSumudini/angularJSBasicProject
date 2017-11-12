@@ -1,7 +1,7 @@
 /**
  * Created by JSumudini on 11/10/2017.
  */
-"use strict"
+"use strict";
 angular.module('capitalizeFirst',[])
     .directive('capitalizeFirst' , function ($parse) {
         return {

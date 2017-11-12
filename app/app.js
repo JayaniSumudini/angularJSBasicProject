@@ -1,8 +1,8 @@
 /**
  * Created by JSumudini on 11/10/2017.
  */
-'use strict'
-angular.module('PatientRegistration',['ngRoute','capitalizeFirst','limitNumberOfInputDigits','PatientDetailsService'])
+'use strict';
+angular.module('PatientRegistration',['ngRoute','capitalizeFirst','limitNumberOfInputDigits','PatientDetailsService','dataGrid'])
     .config(['$locationProvider','$routeProvider',function($locationProvider,$routeProvider){
     $locationProvider.hashPrefix('!');
     $routeProvider.
