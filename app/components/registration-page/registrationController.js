@@ -33,6 +33,7 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
         var birthday = $scope.newData.bday;
         $scope.newData.age = $scope.agecal(birthday);
         PatientDetails.addNewPatientDetails($scope.newData);
+
         $scope.search($scope.searchText);
 
         $scope.newData=[];

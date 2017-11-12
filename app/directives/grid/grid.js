@@ -14,11 +14,11 @@ angular.module('searchGrid', []).component('searchGrid', {
             this.select = item;
         };
         this.options = [
-            {value: 1, text: "Full Time"},
-            {value: 2, text: "Part Time"},
-            {value: 3, text: "Retired"},
-            {value: 4, text: "Student"},
-            {value: 5, text: "Unemployed"}
+            {value: "fulltime", text: "Full Time"},
+            {value: "parttime", text: "Part Time"},
+            {value: "retired", text: "Retired"},
+            {value: "student", text: "Student"},
+            {value: "unemployed", text: "Unemployed"}
         ];
         this.getSelectedOption = function (text) {
 	        var option = this.options.filter(function (t) { return t.text === text });
