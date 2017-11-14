@@ -32,6 +32,7 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
         $scope.bdayinvalid=false;
         var birthday = $scope.newData.bday;
         $scope.newData.age = $scope.agecal(birthday);
+
         PatientDetails.addNewPatientDetails($scope.newData);
 
         $scope.search($scope.searchText);
@@ -56,6 +57,7 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
         var age = year_age+" years and " + month_age + " months";
         if(year_age<0 || month_age<0 || day_age<0){
             $scope.bdayinvalid = true;
+            $scope.newData.bdayinvalid = true;
         }
         if(year_age === 0 && month_age <3){
             $scope.newData.rowcolour = true;
