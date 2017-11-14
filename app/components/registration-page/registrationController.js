@@ -29,10 +29,17 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     };
 
     $scope.submit = function() {
+        console.log($scope.newData.bday);
         $scope.bdayinvalid=false;
         var birthday = $scope.newData.bday;
         $scope.newData.age = $scope.agecal(birthday);
-        PatientDetails.addNewPatientDetails($scope.newData);
+        if($scope.bdayinvalid || ($scope.newData.name=""||null) || ($scope.newData.bday=""||null) || ($scope.newData.gender=""||null)){
+            console.log("not submit");
+        }else{
+            PatientDetails.addNewPatientDetails($scope.newData);
+            console.log("correctly submit");
+        }
+
 
         $scope.search($scope.searchText);
 
