@@ -13,9 +13,10 @@ var app = angular.module('PatientRegistration').controller('RegistrationCtrl', [
         bday: null,
         gender: ""
     };
-    $scope.newData = {};
+    $scope.newData = null;
+
     $scope.clearFunction = function () {
-        $scope.newData = {};
+        $scope.newData = null;
     };
     $scope.submit = function () {
         $scope.bdayinvalid = false;
@@ -23,7 +24,7 @@ var app = angular.module('PatientRegistration').controller('RegistrationCtrl', [
         $scope.newData.age = $scope.agecal();
         PatientDetails.addNewPatientDetails($scope.newData);
         $scope.search($scope.searchText);
-        $scope.newData = {};
+        $scope.newData = null;
     };
     $scope.agecal = function () {
         var mdate = $("#bday").val().toString();

@@ -89,7 +89,6 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
                 if (newDetails.name == null || newDetails.bday == null || newDetails.gender == null || newDetails.bdayinvalid) {
                 } else {
                     patientsDetails.push(newDetails);
-                    console.log(patientsDetails);
                 }
 
             }
