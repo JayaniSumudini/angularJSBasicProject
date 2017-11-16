@@ -1,0 +1,28 @@
+.thstyle {
+    width:100%;
+    border: 2px solid black;
+}
+
+.invalid{
+    font-weight: bolder;
+    color: red;
+}
+.table{
+    width:70%;
+    border-spacing: 5px;
+    border: 2px solid black;
+    border-bottom: 0px solid black;
+}
+.formtable{
+    width:70%;
+    border-spacing: 5px;
+    border: 2px solid black;
+    padding: 5px;
+}
+.dropdown{
+    border: 2px solid black;
+}
+.inputbox{
+    width:50%;
+    border: 2px solid black;
+}

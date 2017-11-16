@@ -1,27 +1,19 @@
-<style>
-    .rowcolour {
-        background-color: red;
-    }
-
-    .notrowcolour {
-        background-color: white;
-    }
-</style>
+<link rel="stylesheet" href="../../css/grid.css">
 <table class="table-hover" style="width:95%;border: 2px solid black;margin-top: 20px" align="center">
     <thead style="background: #8c8c8c;">
     <tr>
-        <th ng-repeat="column in $ctrl.columns"> {{column}}</th>
+        <th data-ng-repeat="column in $ctrl.columns"> {{column}}</th>
     </tr>
     </thead>
     <tbody>
-    <tr data-ng-repeat="item in $ctrl.data" data-ng-if="!item.isDeleted" ng-click="$ctrl.fillDetails(item)" style="cursor: pointer;"
+    <tr data-ng-repeat="item in $ctrl.data" data-ng-if="!item.isDeleted" data-ng-click="$ctrl.fillDetails(item)" style="cursor: pointer;"
         data-ng-class="{rowcolour: item.rowcolour , notrowcolour: !item.rowcolour}">
         <th>{{item.name}}</th>
         <th>{{item.age}}</th>
         <th>{{item.address}}</th>
         <th>
-            <select ng-model="item.status"
-                    ng-options="option.value as option.text for option in $ctrl.options"></select>
+            <select data-ng-model="item.status"
+                    data-ng-options="option.value as option.text for option in $ctrl.options"></select>
         </th>
         <th>
             <button data-ng-click="item.isDeleted = true">Delete</button>
