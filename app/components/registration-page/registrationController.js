@@ -9,15 +9,15 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     $scope.newDataLength=true;
     $scope.bdayinvalid=false;
     $scope.errorMessage=false;
-	$scope.searchColumns = ["Name","Age","Address","Status"];
+	$scope.searchTableColumns = ["Name","Age","Address","Status","Delete Row"];
     $scope.menulist = ['Delete', 'Edit', 'Add'];
     $scope.searchText = {name: "",
         bday: null,
         gender: ""
     };
-    $scope.newData=[];
+    $scope.newData={};
     $scope.clearFunction = function() {
-
+        $scope.newData = {};
     };
     $scope.getStatusKey = function (item) {
         return $scope.statuses.filter( function(status){
@@ -29,21 +29,16 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     };
 
     $scope.submit = function() {
-        console.log($scope.newData.bday);
         $scope.bdayinvalid=false;
+        $scope.newData.isDeleted = false;
         var birthday = $scope.newData.bday;
         $scope.newData.age = $scope.agecal(birthday);
-        if($scope.bdayinvalid || ($scope.newData.name=""||null) || ($scope.newData.bday=""||null) || ($scope.newData.gender=""||null)){
-            console.log("not submit");
-        }else{
-            PatientDetails.addNewPatientDetails($scope.newData);
-            console.log("correctly submit");
-        }
 
+        PatientDetails.addNewPatientDetails($scope.newData);
 
         $scope.search($scope.searchText);
 
-        $scope.newData=[];
+        $scope.newData={};
         $scope.newDataLength=true;
     };
     $scope.agecal =function(birthday){
@@ -63,6 +58,7 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
         var age = year_age+" years and " + month_age + " months";
         if(year_age<0 || month_age<0 || day_age<0){
             $scope.bdayinvalid = true;
+            $scope.newData.bdayinvalid = true;
         }
         if(year_age === 0 && month_age <3){
             $scope.newData.rowcolour = true;
@@ -75,8 +71,6 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
     };
     $scope.openMenu = function(item) {
         $scope.selected = item;
-    };
-    $scope.remove = function () {
     };
     $scope.back=function () {
         window.location = "/#!/";
@@ -97,4 +91,5 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
             });
         }
     };
+
 }]);

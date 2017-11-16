@@ -5,7 +5,6 @@ angular.module('searchGrid', []).component('searchGrid', {
         columns:'=',
         data:'=',
         select: '='
-
     },
     controller: function($q, $timeout) {
         this.$onInit = function() {
