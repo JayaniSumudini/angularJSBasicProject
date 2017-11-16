@@ -20,7 +20,7 @@
     <table style="width:70%;border-spacing: 5px;border: 2px solid black;padding: 5px;" align="center" >
         <tr>
             <th align="left">Name *</th>
-            <th align="left" colspan="4"><input style="width:100%;border: 2px solid black;" type="text" id="name" name="name" required data-ng-model='newData.name' capitalize-first></th>
+            <th align="left" colspan="4"><input style="width:100%;border: 2px solid black;" type="text" id="name" name="name" data-ng-model='newData.name' capitalize-first></th>
         </tr>
         <tr>
             <th align="left">Phone Number</th>
@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <th align="left">Birthday *</th>
-            <th align="left" colspan="4"><input style="border: 2px solid black;" type="date" id="bday" name="bday" required data-ng-model='newData.bday' ng-focus="bdayinvalid"/>
+            <th align="left" colspan="4"><input style="border: 2px solid black;" type="date" id="bday" name="bday" data-ng-model='newData.bday' focus="{{bdayinvalid}}"/>
                 <div style="font-weight: bolder;color: red;" data-ng-show="bdayinvalid">Invalid birthday</div></th>
         </tr>
         <tr>

@@ -2,7 +2,7 @@
  * Created by JSumudini on 11/10/2017.
  */
 'use strict';
-angular.module('PatientRegistration',['ngRoute','capitalizeFirst','limitNumberOfInputDigits','PatientDetailsService','searchGrid'])
+angular.module('PatientRegistration',['ngRoute','capitalizeFirst','limitNumberOfInputDigits','PatientDetailsService','searchGrid','focus'])
     .config(['$locationProvider','$routeProvider',function($locationProvider,$routeProvider){
     $locationProvider.hashPrefix('!');
     $routeProvider.

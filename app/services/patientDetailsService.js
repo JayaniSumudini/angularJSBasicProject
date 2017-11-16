@@ -4,7 +4,7 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
             this: patientsDetails = [
                 {
                     name: "test1",
-                    age: 23,
+                    age: "23 years",
                     address: "add 01",
                     status: "fulltime",
                     gender: "male",
@@ -15,7 +15,7 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
                 },
                 {
                     name: "test2",
-                    age: 23,
+                    age: "23 years",
                     address: "add 02",
                     status: "parttime",
                     gender: "male",
@@ -26,7 +26,7 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
                 },
                 {
                     name: "test3",
-                    age: 24,
+                    age: "24 years",
                     address: "add 01",
                     status: "retired",
                     gender: "female",
@@ -37,7 +37,7 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
                 },
                 {
                     name: "test4",
-                    age: 34,
+                    age: "34 years",
                     address: "add 02",
                     status: "parttime",
                     gender: "male",
@@ -48,7 +48,7 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
                 },
                 {
                     name: "test1",
-                    age: 23,
+                    age: "23 years",
                     address: "add 02",
                     status: "student",
                     gender: "male",
@@ -59,7 +59,7 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
                 },
                 {
                     name: "test2",
-                    age: 34,
+                    age: "34 years",
                     address: "add 01",
                     status: "unemployed",
                     gender: "female",
@@ -70,7 +70,7 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
                 },
                 {
                     name: "test1",
-                    age: 24,
+                    age: "24 years",
                     address: "add 03",
                     status: "fulltime",
                     gender: "male",
@@ -99,3 +99,4 @@ var PatientDetailsService = angular.module('PatientDetailsService', [])
 
         };
     });
+

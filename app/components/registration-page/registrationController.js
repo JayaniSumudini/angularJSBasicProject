@@ -82,12 +82,12 @@ var app =angular.module('PatientRegistration').controller('RegistrationCtrl', ['
         }else {
             $scope.searchItems = $scope.items.filter( function(item){
 
-                if($scope.searchText.bday == null){
+                if($scope.searchText.bday === null){
                     $scope.searchText.bday = "";
                 }
-                return (item.name.toLowerCase().indexOf($scope.searchText.name.toLowerCase())!= -1 &&
-                item.gender.toLowerCase().indexOf($scope.searchText.gender.toLowerCase())!= -1 &&
-                item.bdayYear.toString().indexOf($scope.searchText.bday.toString())!= -1)
+                return (item.name.toLowerCase().indexOf($scope.searchText.name.toLowerCase())!== -1 &&
+                item.gender.toLowerCase().indexOf($scope.searchText.gender.toLowerCase())!== -1 &&
+                item.bdayYear.toString().indexOf($scope.searchText.bday.toString())!== -1);
             });
         }
     };
